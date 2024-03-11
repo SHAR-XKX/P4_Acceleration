@@ -21,26 +21,31 @@ def calc_grid_3d(grid_size_X = 10, grid_size_Y = 10) -> np.ndarray:
 n = 10
 
 
-T = np.empty(n, dtype=pre_processing_acc.coor)
 
-for i in range(len(T)):
-    T[i] = (i, i)
 
-print(T)
+file  = "geonames_be_smol.csv"
+
+
+cities = pre_processing_acc.get_cities(file)
+
+print(cities)
+
+
+
+
+# T = np.empty(n, dtype=pre_processing_acc.coor)
+
+# for i in range(len(T)):
+#     T[i] = (i, i)
+
+# print(T)
 
 
 # s = time()
 # # res = pre_processing_acc.calc_grid_3d(n, n)
 # res = pre_processing_acc.calc_grid(T, n, n)
 
-adj = pre_processing_acc.calc_adj(T, T, 10)
-
-
-print(adj)
-
-
-print(T)
-
+# adj = pre_processing_acc.calc_adj(T, T, 10)
 
 # e = time()
 
